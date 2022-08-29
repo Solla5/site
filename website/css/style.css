@@ -1,0 +1,360 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+@import url(https://fonts.googleapis.com/css?family=Glegoo:regular,700);;
+
+[class*="__container"]{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.hidden {
+  display: none
+}
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+/* главный центральный элемент который прижимает footer к низу  main class(page)*/
+.page{
+	flex: 1 1 auto;
+}
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+} /* variables*/
+ 
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: 'Glegoo';
+	background-color: #79695B;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul{
+    list-style: none;
+}
+
+
+
+/* Header */
+.header{
+    background-color: #b3a69a;
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: fixed;
+    top: 0;
+    width: 100%;
+	align-items: center;
+	padding:0;
+	z-index: 56;
+	
+
+}
+
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+    font-size: 0px;
+    margin-left: 10px;
+	padding: 17px 5px;
+}
+
+
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color:#b3a69a;
+    overflow: hidden;
+	padding: 0 20px;
+ 
+}
+.menu a{
+    display: block;
+    padding: 25px;
+    color: var(--white);
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 20px 20px 0;
+    margin: 10px 0 0 0;
+}/* Style label tag */
+ 
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+ 
+} /* Style span tag */
+ 
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+ 
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+ 
+    }
+ 
+    .hamb{
+        display: none;
+    }
+}
+/*///////////////////////////////////////////////*/
+.main_header__container{
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px 0px 0px ;
+    color: white;
+    font-size: 40px;
+}
+.main__container{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    color: white;
+    align-items: center;
+}
+
+.main_text h2{
+    padding: 10px;
+    font-family: 'Glegoo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 45px;
+    color: #FFFFFF;
+}
+
+.main_text p{
+    padding: 10px;
+    font-family: 'Glegoo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+
+    color: #FFFFFF;
+}
+
+
+.container__persona { 
+    perspective: 1000px; /*определяет расcтояние между плоскостью z = 0 и пользователем для того чтобы придать 3D-позиционируемому элементу эффект переспективы*/
+    width: 550px; /*ширина элемента*/
+    height: 500px; /*высота элемента*/
+    margin: 0 15px; /*внешний отступ*/
+    display: inline-block; /*Это значение генерирует блочный элемент, который обтекается другими элементами веб-страницы подобно встроенному элементу*/ 
+   } 
+   .persona { 
+    position: relative; /*позиционирование элемента*/
+    cursor: pointer; /*изминения внешнего вида курсора*/
+    width: 550px;  /*ширина элемента*/
+    height: 500px; /*высота элемента*/
+    transition: 1s; /*время проигрования анимации*/
+    transform-style: preserve-3d; /*стиль анимации*/
+   } 
+   .container__persona:hover .persona { 
+   transform: rotateY(180deg); /*поворот элемента*/
+    } 
+   .persona__foto { 
+    width: 100%; /*ширина элемента*/
+    height: 100%; /*высота элемента*/
+    overflow: hidden; /*Вылезающее за границу содержимое становится недоступно*/
+    z-index: 2; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z*/
+    position: absolute;/*Элемент исчезает с того места, где он должен быть и позиционируется заново*/ 
+    top: 0; /*верхний отступ*/
+    left: 0; /*отступ слева*/
+    backface-visibility: hidden;/* определяет, должна ли быть видна задняя сторона элемента или нет */
+    border-radius: 15px;/*скругления углов*/ 
+   } 
+   .persona__info { 
+    background-color: #000; /*цвет фона*/
+    width: 550px; /*ширина элемента*/
+    height: 500px; /*высота элемента*/
+    text-align: center; /*выравнивание элементов по центру блока*/
+    position: absolute; /*Элемент исчезает с того места, где он должен быть и позиционируется заново*/ 
+    top: 0; /*верхний отступ*/
+    left: 0; /*отступ слева*/
+    z-index: 1; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z*/
+    backface-visibility: hidden; /* определяет, должна ли быть видна задняя сторона элемента или нет */
+    transform: rotateY(180deg); /*поворот элемента*/
+    border-radius: 15px; /*скругления углов*/ 
+   } 
+   .persona__info > h3 { 
+    padding-top: 15px; /*внутрений отступ сверху*/
+    color: #f3f3f3; /*цвет текста*/
+   } 
+   .persona__info > a { 
+    color: #f3f3f3; /*цвет текста*/
+    display: block; /*Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе*/
+    margin: 20px auto; /*внешний отступ сверху и позиционирование по центру*/
+    text-decoration: none;/*убирает декорации с текста*/ 
+   } 
+   .persona__info > a > i { 
+    color: #fff; /*цвет текста*/
+    font-size: 32px; /*цвет текста*/
+    display: block; /*Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе*/
+    margin-bottom: 10px;/*отступ снизу*/ 
+   }
+
+  
+
+@media (max-width: 1199.98px) {
+    .main_img{
+        display: none;
+    }
+	.main__container{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+}
+@media (max-width: 990.98px) {
+	[class*="__container"]{
+		max-width: 750px;
+	}
+}
+@media (max-width: 767.98px) {
+	.container__persona{
+        display: none;    
+    }
+    .main_text{
+        padding: 0px 10px;
+        margin:0px auto;
+    }
+    .main_text h2{
+        font-size: 25px;
+    }
+    .main_text p{
+        font-size: 15px;
+    }
+}
+
+
+
+.footer{
+    color: white;
+    background-color: #b3a69a;
+    padding: 20px;
+    display: flex; 
+}
+
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.footer_link a img{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    
+}

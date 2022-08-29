@@ -1,0 +1,294 @@
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+@import url(https://fonts.googleapis.com/css?family=Glegoo:regular,700);;
+
+[class*="__container"]{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.hidden {
+  display: none
+}
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+/* главный центральный элемент который прижимает footer к низу  main class(page)*/
+.page{
+	flex: 1 1 auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+} /* variables*/
+ 
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: 'Glegoo';
+	background-color: #79695B;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul{
+    list-style: none;
+}
+
+
+
+/* Header */
+.header{
+    background-color: #b3a69a;
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: fixed;
+    top: 0;
+    width: 100%;
+	align-items: center;
+	padding:0;
+	z-index: 56;
+	
+
+}
+
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+    font-size: 0px;
+    margin-left: 10px;
+	padding: 17px 5px;
+}
+
+
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color:#b3a69a;
+    overflow: hidden;
+	padding: 0 20px;
+ 
+}
+.menu a{
+    display: block;
+    padding: 25px;
+    color: var(--white);
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 20px 20px 0;
+    margin: 10px 0 0 0;
+}/* Style label tag */
+ 
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+ 
+} /* Style span tag */
+ 
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+ 
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+ 
+    }
+ 
+    .hamb{
+        display: none;
+    }
+}
+
+
+/*////////////////////////////*/
+.main__container{
+   
+   margin: 0 auto;
+}
+.main_header{
+    display: flex;
+    justify-content: center;
+    margin: 70px auto;
+    padding: 10px;
+    font-family: 'Glegoo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 45px;
+    color: #FFFFFF;
+}
+
+table{
+    padding: 10px;
+    max-width: 1100px;
+    margin-bottom: 50px;
+}
+
+tr{
+    border: 1px solid white;
+    padding: 20px;
+}
+
+th{
+    border: 2px solid white;
+    padding: 15px;
+}
+
+td{
+    border: 2px solid white;
+    padding: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .none{
+        display: none;
+    }
+    .fraim{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    color: white;
+    background-color: #b3a69a;
+    padding: 20px;
+    display: flex; 
+}
+
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.footer_link a img{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    
+}
